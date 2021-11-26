@@ -39,8 +39,8 @@ Write the outputs according to the given inputs:
 1. ```C
  	Input: 3+7/3+5
    ```
-   <p align='right'>2 Marks</p>
    `Output: Value of 3+7/3+5 is 8`
+   <p align='right'>2 Marks</p>
 
 2. <p align='right'>2 Marks</p>
    ```C
