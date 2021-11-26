@@ -72,9 +72,51 @@ Write your explanations which resulted in the code being erroneous:
 
 
 
-**Q28 (Sayak)**
-
-
+**Q28 (Sayak)**<br>
+Give the output of the following snippets, or indicate error with a short explanation:
+1. ```
+   int a=1, b=2, c=3, d=4, e=4;
+   ((((a=b)=c)=d)=e)=0;
+   printf("%d %d %d %d %d", a, b, c, d, e);
+   ```
+  <p align='right'>2 Marks</p>
+   `Output: Compilation error, require some literal on the left of assignment`
+2. ```
+   int a=1, b=2, c=3, d=4, e=4, f=6;
+   f = ((((a=b)==c)==d)==e)==0;
+   printf("%d %d %d %d %d %d", a, b, c, d, e, f);
+   ```
+  <p align='right'>2 Marks</p>
+   `Output: 2 2 3 4 5 1`
+3. ```
+   int a=1, b=2, c=3, d=4, e=5, f=6;
+   f = a = (b = 4*(c = 3*(d = 2*(e = 1))));
+   printf("%d %d %d %d %d %d", a, b, c, d, e, f);
+   ```
+  <p align='right'>2 Marks</p>
+   `Output: 24 24 6 2 1 24`
+4. ```
+   int a=1, b=2, c=3, d=4;
+   a = b = c = d == 4;
+   printf("%d %d %d %d", a, b, c, d);
+   ```
+  <p align='right'>2 Marks</p>
+   `Output: 1 1 1 4`
+5. ```
+   int a=1, b=2, c=3, d=4;
+   (a = b) + c;
+   printf("%d %d %d %d", a, b, c, d);
+   ```
+  <p align='right'>2 Marks</p>
+   `Output: 2 2 3 5`
+6. ```
+   char a = 'x';
+   int b = '3', c;
+   c = a - b;
+   printf("%d %d %c", a, b, c);
+   ```
+  <p align='right'>2 Marks</p>
+   `Output: 120 51 E`
 
 
 
