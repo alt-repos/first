@@ -1,38 +1,68 @@
-## Permutation Cipher:
-A cryptographic protocol is when there are two parties Alice and Bob, and Alice wants to send a message to Bob. However, Eve wants to intercept this message but Alice needs to make sure only Bob knows what she wanted to send. 
-For this, Alice and Bob meet initially and Alice shares a “key” with Bob. Later, whenever Alice needs to send a message to Bob, she encodes the message (m) that she wants to share by a function E(m). Bob needs to decode this message using a decoding algorithm, and a “key” which Alice and Bob previously shared. More specifically we want D(E(m), k) = m.
-Now, Alice uses the encryption which is a permutation map. This means that if ‘a’ is mapped to ‘m’ and ‘b’ is mapped to ‘t’, then the word ‘abaab’ would be ‘mtmmt’. This permutation can be seen as a function f : N -> N where, given the ASCII value of the message alphabet, it outputs the ASCII value of the encrypted alphabet. For simplicity, we restrict out ASCII values from 34 to 122 to include alphabets and symbols (Notice that this sample space is of size 89, a prime. Can you guess why?).
+**Q27 (Sayak Chakrabarti)**
+Rohit wrote a code to evaluate the value of a mathematical expression. However, the code turned out to be wrong. Given the following inputs, write the output of this code. Also explain where Rohit went wrong in at most two sentences. Note that you do not need to give a modification, just point out the error. <br>
 
-We are going to describe a decryption protocol. For a given key k, the decryption function is given as D(x) = ((x-34)^k mod 89) + 34.
-The input will contain a few lines. First line will contain the key k. 
-Each of the next lines will contain strings, that need to be decoded and the output given. Note that, space (ASCII 32) stays as is.
+The variable “eqn” is a string. When we pass strings into a function, we need pointers, which you will learn later in this course. For now, think of “eqn” and “\*eqn” as arrays, and the eqn[i] gives us the (i+1)-th character, as is the case with usual arrays you are familiar with.<br>
+
+```
+#include<stdio.h>
+#include<stdlib.h>
+
+int func1(char c) { return (c >= '0' && c <= '9'); }
+int func2(char c) { return (c - '1'); }
+int evaluate(char *eqn)
+{
+    if (*eqn == '\0')  return -1;
+    int val = func2(eqn[0]);
+    for (int i = 1; eqn[i]; i += 2)
+    {
+        char opr = eqn[i], opd = eqn[i+1];
+        if (!func1(opd))  return -1;
+        if (opr == '+')       val += func2(opd);
+        else if (opr == '-')  val -= func2(opd);
+        else if (opr == '*')  val *= func2(opd);
+        else if (opr == '/')  val /= func2(opd);
+        else                  return -1;
+    }
+    return val;
+}
+int main()
+{
+    char eqn[500];
+    scanf("%s", eqn);
+    int val = evaluate(eqn);
+    (val == -1)? printf("%s is Invalid", eqn):
+                 printf("Value of %s is %d", eqn, val);
+	return 0;
+}
+```
+Write the outputs according to the given inputs:
+1. ```C
+ Input: 3+7/3+5
+  ```
+`Output: Value of 3+7/3+5 is 8`
+2. ```C
+ Input: 5+4*2/8    
+  ```
+  `Output: Value of 5+4*2/8 is 1`
+3. ```C
+ Input: 9+6/4*3  
+  ```
+  `Output: Value of 9+6/4*3 is 8`
+4. ```C
+ Input: 4++1       
+  ```
+  `Output: 4++1 is Invalid`
+<br><br>
+
+Write your explanations which resulted in the code being erroneous:
+```C
+<br><br>
+```
+- `Line 5: It should be (c - ‘0’) instead of (c-’1’).`
+- `Line 16, 17: Dividing/multiplying by entire value obtained until now.`
+
+<p style='text-align: right;'> Your Text </p>
 
 
-### Sample Test Cases:
-* Sample Test Case 1:
-  * Input:
-    ```
-    33
-    abcdefghijklmnopqrstuvwxyz
-    ```
-  * Output:
-    ```
-    @*),+.-0/21436587:9<;>=@?B
-    ```
-* Sample Test Case 2:
-  * Input:
-    ```
-    15
-    N(B &M88;Gja L8 FPjnQDhZQq'zAF
-    ```
-  * Output: 
-    ```
-    The password is '<rt4YZ@467z>'
-    ```
-  
-  
-  
-  
-  
-##### Designed by:
-[Sayak Chakrabarti](mailto:sayak@cse.iitk.ac.in)
+
+
