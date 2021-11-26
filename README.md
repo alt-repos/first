@@ -36,11 +36,11 @@ int main()
 }
 ```
 Write the outputs according to the given inputs:
-1. <p align='right'>2 Marks</p>
-   ```C
+1. ```C
  	Input: 3+7/3+5
    ```
-`Output: Value of 3+7/3+5 is 8`
+   <p align='right'>2 Marks</p>
+   `Output: Value of 3+7/3+5 is 8`
 
 2. <p align='right'>2 Marks</p>
    ```C
