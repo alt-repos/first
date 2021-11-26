@@ -40,14 +40,17 @@ Write the outputs according to the given inputs:
  	Input: 3+7/3+5
    ```
 `Output: Value of 3+7/3+5 is 8`
+
 2. ```C
  	Input: 5+4*2/8    
    ```
   `Output: Value of 5+4*2/8 is 1`
+  
 3. ```C
  	Input: 9+6/4*3  
    ```
   `Output: Value of 9+6/4*3 is 8`
+  
 4. ```C
  	Input: 4++1       
    ```
