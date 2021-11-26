@@ -1,4 +1,4 @@
-**Q27 (Sayak)**
+**Q27 (Sayak)** <br>
 Rohit wrote a code to evaluate the value of a mathematical expression. However, the code turned out to be wrong. Given the following inputs, write the output of this code. Also explain where Rohit went wrong in at most two sentences. Note that you do not need to give a modification, just point out the error. <br>
 
 The variable “eqn” is a string. When we pass strings into a function, we need pointers, which you will learn later in this course. For now, think of “eqn” and “\*eqn” as arrays, and the eqn[i] gives us the (i+1)-th character, as is the case with usual arrays you are familiar with.<br>
@@ -63,7 +63,8 @@ Write the outputs according to the given inputs:
 
 Write your explanations which resulted in the code being erroneous:
 ```C
-<br><br>
+
+
 ```
 - `Line 5: It should be (c - ‘0’) instead of (c-’1’).` <p align='right'>0.5 Mark</p>
 - `Line 16, 17: Dividing/multiplying by entire value obtained until now.` <p align='right'>1.5 Marks</p>
