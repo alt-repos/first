@@ -80,35 +80,30 @@ Give the output of the following snippets, or indicate error with a short explan
    printf("%d %d %d %d %d", a, b, c, d, e);
    ```
    `Output: Compilation error, require some literal on the left of assignment`
-  <p align='right'>2 Marks</p>
 2. ```
    int a=1, b=2, c=3, d=4, e=4, f=6;
    f = ((((a=b)==c)==d)==e)==0;
    printf("%d %d %d %d %d %d", a, b, c, d, e, f);
    ```
    `Output: 2 2 3 4 5 1`
-  <p align='right'>2 Marks</p>
 3. ```
    int a=1, b=2, c=3, d=4, e=5, f=6;
    f = a = (b = 4*(c = 3*(d = 2*(e = 1))));
    printf("%d %d %d %d %d %d", a, b, c, d, e, f);
    ```
    `Output: 24 24 6 2 1 24`
-  <p align='right'>2 Marks</p>
 4. ```
    int a=1, b=2, c=3, d=4;
    a = b = c = d == 4;
    printf("%d %d %d %d", a, b, c, d);
    ```
    `Output: 1 1 1 4`
-  <p align='right'>2 Marks</p>
 5. ```
    int a=1, b=2, c=3, d=4;
    (a = b) + c;
    printf("%d %d %d %d", a, b, c, d);
    ```
    `Output: 2 2 3 5`
-  <p align='right'>2 Marks</p>
 6. ```
    char a = 'x';
    int b = '3', c;
@@ -116,7 +111,7 @@ Give the output of the following snippets, or indicate error with a short explan
    printf("%d %d %c", a, b, c);
    ```
    `Output: 120 51 E`
-  <p align='right'>2 Marks</p>
+  
 
 
 
